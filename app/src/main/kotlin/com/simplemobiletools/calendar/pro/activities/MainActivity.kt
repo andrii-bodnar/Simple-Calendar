@@ -19,6 +19,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuItemCompat
+import com.crowdin.platform.Crowdin
 import com.crowdin.platform.util.inflateWithCrowdin
 import com.simplemobiletools.calendar.pro.BuildConfig
 import com.simplemobiletools.calendar.pro.R
@@ -115,6 +116,8 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             ConfirmationDialog(this, "", R.string.upgraded_from_free, R.string.ok, 0) {}
             config.wasUpgradedFromFreeShown = true
         }
+
+        Crowdin.authorize(this)
     }
 
     override fun onResume() {
